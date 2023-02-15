@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import CustomRadioButton from "../../components/radioButton/radioButton";
 import CustomButton from "../../components/button/button";
 import CustomSelect from "../../components/select/select";
@@ -34,28 +33,7 @@ function ClinicMaster() {
   ];
   const actions = (
     <>
-      <CustomButton
-        btnTitle="Approve"
-        variant="contained"
-        color="success"
-        btnStyles={{
-          color: "#fff",
-          marginTop: "50px",
-          border: "1px solid success",
-        }}
-        onClickHandle={() => handleClose()}
-      />
-      <CustomButton
-        btnTitle="Reject"
-        variant="contained"
-        color="warning"
-        btnStyles={{
-          color: "#fff",
-          marginTop: "50px",
-          border: "1px solid success",
-        }}
-        onClickHandle={() => handleClose()}
-      />
+      "button"
     </>
   );
 
@@ -99,28 +77,7 @@ function ClinicMaster() {
         onChange={handleChangeRadio}
       />
 
-      <div>
-        <Button variant="contained" color="success" onClick={handleOpen}>
-          0
-        </Button>
-        <CustomDialog
-          isOpen={isOpen}
-          onClose={handleClose}
-          title="Custom Dialog"
-          content={
-            <>
-              <CustomRadioButton
-                name="custom-radio-button"
-                value={radio}
-                label="Gender"
-                options={options}
-                onChange={handleChangeRadio}
-              />
-            </>
-          }
-          actions={actions}
-        />
-      </div>
+    
 
       <CustomSelect
         label="Status"
@@ -134,6 +91,18 @@ function ClinicMaster() {
       />
 
       <CustomDatePicker />
+      <button onClick={handleOpen}>Modal or Dialog</button>
+      <CustomDialog
+        isOpen={isOpen}
+        onClose={handleClose}
+        title="Custom Dialog"
+        content={
+          <>
+           Content
+          </>
+        }
+        actions={actions}
+      />
     </>
   );
 }

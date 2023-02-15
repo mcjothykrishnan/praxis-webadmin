@@ -21,9 +21,9 @@ function CustomRadioButton(props) {
         row
         aria-labelledby="demo-controlled-radio-buttons-group"
       >
-        {options.map((option) => (
+        {options.map((option,index) => (
           <FormControlLabel
-            key={option.value}
+            key={index}
             value={option.value}
             control={<Radio />}
             label={option.label}

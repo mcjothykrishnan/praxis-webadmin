@@ -24,8 +24,8 @@ function CustomDialog(props) {
       keepMounted
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>
-        {title}{" "}
+      
+      {title && <DialogTitle> {title}
         {onClose ? (
           <IconButton
             aria-label="close"
@@ -40,9 +40,9 @@ function CustomDialog(props) {
             <CloseSharp />
           </IconButton>
         ) : null}
-      </DialogTitle>
-      <DialogContent>{content}</DialogContent>
-      <DialogActions>{actions}</DialogActions>
+        </DialogTitle>}
+      {content && <DialogContent>{content}</DialogContent>}
+      {actions && <DialogActions>{actions}</DialogActions>}
     </Dialog>
   );
 }

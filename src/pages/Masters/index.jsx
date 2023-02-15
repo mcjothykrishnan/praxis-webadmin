@@ -5,10 +5,7 @@ import ClinicMaster from "./clinicMaster";
 import SpecialityMaster from "./specialityMaster";
 import DiseasesMater from "./diseasesMater";
 import GeneralQuestions from "./generalQuestions";
-/**
- *
- * @returns
- */
+
 function Reviews() {
   const tabs = [
     { label: "Tab 1", content: <ClinicMaster /> },
@@ -19,7 +16,7 @@ function Reviews() {
 
   return (
     <Grid item container>
-      <Grid item pt={2} md={12} lg={12} xs={12} sm={12}>
+      <Grid item  md={12} lg={12} xs={12} sm={12}>
         <CustomTab tabs={tabs} />
       </Grid>
     </Grid>

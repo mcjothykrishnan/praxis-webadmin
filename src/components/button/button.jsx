@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Grid } from "@mui/material";
+import { Button } from "@mui/material";
 import PropTypes from "prop-types";
-import "./button.css";
 /**
  *
  * @param {*} props --
@@ -12,18 +11,16 @@ function CustomButton(props) {
     props;
 
   return (
-    <Grid container md={12} lg={12} sm={12} xs={12} className="buttons_grid">
-      <Button
-        variant={variant}
-        color={color}
-        sx={btnStyles}
-        onClick={onClickHandle}
-        customClass={customClass}
-        type="submit"
-      >
-        {btnTitle}
-      </Button>
-    </Grid>
+    <Button
+      variant={variant}
+      color={color}
+      sx={btnStyles}
+      onClick={onClickHandle}
+      className={customClass}
+      type="submit"
+    >
+      {btnTitle}
+    </Button>
   );
 }
 export default CustomButton;
