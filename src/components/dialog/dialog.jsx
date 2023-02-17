@@ -9,13 +9,28 @@ import {
 } from "@mui/material";
 import { CloseSharp } from "@mui/icons-material";
 import Slide from "@mui/material/Slide";
+import { makeStyles } from "@mui/styles";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+const useStyles = makeStyles({
+  root: {
+    '&::-webkit-scrollbar': {
+      width: '0.5em'
+    },
+    '&::-webkit-scrollbar-track': {
+      boxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)'
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: "#4A0239",
+      borderRadius: '5px'
+    }
+  }
+});
 function CustomDialog(props) {
   const { isOpen, onClose, title, content, actions } = props;
-
+  const classes = useStyles();
   return (
     <Dialog
       open={isOpen}
@@ -41,7 +56,7 @@ function CustomDialog(props) {
           </IconButton>
         ) : null}
         </DialogTitle>}
-      {content && <DialogContent>{content}</DialogContent>}
+      {content && <DialogContent  className={classes.root}>{content}</DialogContent>}
       {actions && <DialogActions>{actions}</DialogActions>}
     </Dialog>
   );
